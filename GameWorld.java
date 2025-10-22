@@ -185,14 +185,7 @@ public class GameWorld extends InputAdapter
     public void onGameStop()
     {
         if(gamestate==GameState.Running){gamestate=GameState.Pause;}
-        else
-        {
-            if(!(gamestate==GameState.GameOver))
-            {
-                gamestate=GameState.Running;
-
-            }
-        }
+        else if(gamestate==GameState.Pause){gamestate=GameState.Running;}
     }
     public void onClick() //마우스 클릭시 해당 좌표에 버튼이 있으면 설명창을 닫는 함수
     {
